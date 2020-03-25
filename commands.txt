@@ -1,0 +1,6 @@
+sfdx plugins:generate
+
+sfdx plugins:trust:sign -s "https://github.com/" -p "https://github.com/ganesh2109.keys" -k "C:\Users\ganshankar\keys\key"
+
+
+sfdx metadatautil:upgradeapiversion -m apex -s 40 -t 47 -p "C:\Users\ganshankar\BP1\VCS\src"
