@@ -3,7 +3,7 @@
   "description": "Helps in upgrading salesforce api version for all metadata files",
   "version": "0.0.0",
   "author": "GanShankar",
-  "bugs": "https://github.com/https://github.com/ganesh2109/salesforce-apiversion-upgrade/salesforce-apiversion-upgrade/issues",
+  "bugs": "https://github.com/ganesh2109/salesforce-apiversion-upgrade/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -38,7 +38,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/ganesh2109/salesforce-apiversion-upgrade/salesforce-apiversion-upgrade",
+  "homepage": "https://github.com/ganesh2109/salesforce-apiversion-upgrade",
   "keywords": [
     "sfdx-plugin"
   ],

@@ -30,8 +30,8 @@ export default class UpgradeAPIVersion extends SfdxCommand {
   protected static flagsConfig = {
     metadata: flags.string({char: 'm', description: messages.getMessage('metadatatype')}),
     sourceversion: flags.number({char: 's', description: messages.getMessage('sourceapi')}),
-    targetversion: flags.number({char: 't', description: messages.getMessage('targetapi')}),
-    fileprefix: flags.string({char: 'x', description: messages.getMessage('prefix')}),
+    targetversion: flags.number({char: 't', description: messages.getMessage('targetapi')}),//behaviour changes
+    fileprefix: flags.string({char: 'x', description: messages.getMessage('prefix')}),//regex pattern
     path: flags.string({char: 'p', description: messages.getMessage('path')})
   };
 
@@ -56,12 +56,11 @@ export default class UpgradeAPIVersion extends SfdxCommand {
       path: this.flags.path,
       dryrun: false
 		};
-    let outputString;
 
     let service : ModifyMetaXMLFile = new ModifyMetaXMLFile();
     service.applyProcess(baseRequest);
 
     // Return an object to be displayed with --json
-    return { orgId: this.org.getOrgId(), outputString };
+    return {};
   }
 }
