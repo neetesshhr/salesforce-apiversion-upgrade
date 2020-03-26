@@ -4,3 +4,11 @@ sfdx plugins:trust:sign -s "https://github.com/" -p "https://github.com/ganesh21
 
 
 sfdx metadatautil:upgradeapiversion -m apex -s 40 -t 47 -p "C:\Users\ganshankar\BP1\VCS\src"
+
+
+npm set init.author.name "Ganesh Shankar"
+npm set init.author.email "ganesh2109@gmail.com"
+npm adduser
+
+
+npm publish ./

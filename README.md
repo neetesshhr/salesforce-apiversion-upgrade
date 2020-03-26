@@ -30,26 +30,27 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-helloorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx metadatautil:upgradeapiversion [-m <string>] [-s <number>] [-t <number>] [-x <string>] [-p <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-metadatautilupgradeapiversion--m-string--s-number--t-number--x-string--p-string--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-## `sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-print a greeting and your org IDs
+## `sfdx metadatautil:upgradeapiversion [-m <string>] [-s <number>] [-t <number>] [-x <string>] [-p <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 ```
 USAGE
-  $ sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
+  $ sfdx metadatautil:upgradeapiversion [-m <string>] [-s <number>] [-t <number>] [-x <string>] [-p <string>] [-v 
+  <string>] [--apiversion <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
-  -f, --force                                                                       example boolean flag
-  -n, --name=name                                                                   name to print
-
-  -u, --targetusername=targetusername                                               username or alias for the target
-                                                                                    org; overrides default target org
+  -m, --metadata=metadata                                                           name of metadata type
+  -p, --path=path                                                                   src folder location
+  -s, --sourceversion=sourceversion                                                 source api version
+  -t, --targetversion=targetversion                                                 target api version
 
   -v, --targetdevhubusername=targetdevhubusername                                   username or alias for the dev hub
                                                                                     org; overrides default dev hub org
+
+  -x, --fileprefix=fileprefix                                                       metadata prefix for e.g. PSM for
+                                                                                    PSM_New_Shipment.cls
 
   --apiversion=apiversion                                                           override the api version used for
                                                                                     api requests made by this command
@@ -67,6 +68,8 @@ EXAMPLES
   $ sfdx hello:org --name myname --targetusername myOrg@example.com
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
+
+_See code: [lib\commands\metadatautil\upgradeapiversion.js](https://github.com/ganesh2109/salesforce-apiversion-upgrade/blob/v0.0.0/lib\commands\metadatautil\upgradeapiversion.js)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
