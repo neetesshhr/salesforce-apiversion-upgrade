@@ -3,6 +3,7 @@ const replace = require("replace-in-file");
 const pathModule = require("path");
 export class ModifyMetaXMLFile {
   async applyProcess(request: BaseRequest): Promise<any> {
+    // destructuring the request object
     let {
       metadata,
       sourceversion,
@@ -15,6 +16,8 @@ export class ModifyMetaXMLFile {
     let fileName = `${fileprefix}*-meta.xml`;
     let selectedFiles = [];
 
+    // constructing the list of folders to be covered based on user's input
+    // using pathModule.join to cover different operating systems path formats
     for (let i = 0; i < metadata.length; i++) {
       if (metadata[i] == "classes") {
         selectedFiles.push(pathModule.join(path, "classes", fileName));
@@ -42,6 +45,7 @@ export class ModifyMetaXMLFile {
     let regex = `<apiVersion>([0-${+firstDigit -
       1}][0-9]|[${firstDigit}-${firstDigit}][0-${+secondDigit}]).0</apiVersion>`;
 
+    // Constructing the options parameter to be passed to replace-in-file module
     let options = {
       files: selectedFiles,
       from: new RegExp(regex, "g"),

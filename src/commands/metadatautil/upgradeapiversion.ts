@@ -68,7 +68,7 @@ export default class UpgradeAPIVersion extends SfdxCommand {
     this.ux.styledHeader(messages.getMessage("pluginTitle"));
     this.ux.startSpinner("Running...");
 
-    // Generate the request object
+    // Construct the request object based on user's input or defaults
     let baseRequest: BaseRequest = {
       metadata: this.flags.metadata,
       sourceversion: this.flags.sourceversion
