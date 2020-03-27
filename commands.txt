@@ -1,3 +1,14 @@
+Requirements:
+1) sfdx plugin easy to install for anyone
+2) plugin source api version (< v30)
+3) plugin target api version (47/48)
+4) prefix metadata files (PSM, DOM, BPG, SEL etc.)
+5) src
+6) metadata type (apex/pages/compoent/aura etc)
+
+
+
+
 sfdx plugins:generate
 
 sfdx plugins:trust:sign -s "https://github.com/" -p "https://github.com/ganesh2109.keys" -k "C:\Users\ganshankar\keys\key"
@@ -8,7 +19,19 @@ sfdx metadatautil:upgradeapiversion -m apex -s 40 -t 47 -p "C:\Users\ganshankar\
 
 npm set init.author.name "Ganesh Shankar"
 npm set init.author.email "ganesh2109@gmail.com"
-npm adduser
-
+npm adduser //skip if you already have an npmjs account
+yarn
 
 npm publish ./
+
+
+
+
+sfdx plugins:install https://github...................
+sfdx plugins:link
+
+
+
+npm plugins:install salesforce-api-upgradeapiversion
+
+sfdx metadatautil:

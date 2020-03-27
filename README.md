@@ -22,7 +22,7 @@ $ npm install -g salesforce-apiversion-upgrade
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-salesforce-apiversion-upgrade/0.0.0 win32-x64 node-v12.13.1
+salesforce-apiversion-upgrade/0.0.1 win32-x64 node-v12.13.1
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -69,7 +69,7 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [lib\commands\metadatautil\upgradeapiversion.js](https://github.com/ganesh2109/salesforce-apiversion-upgrade/blob/v0.0.0/lib\commands\metadatautil\upgradeapiversion.js)_
+_See code: [lib\commands\metadatautil\upgradeapiversion.js](https://github.com/ganesh2109/salesforce-apiversion-upgrade/blob/v0.0.1/lib\commands\metadatautil\upgradeapiversion.js)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
