@@ -48,7 +48,10 @@
     "bin": "sfdx",
     "topics": {
       "metadatautil": {
-        "description": "Commands to upgrade api version."
+        "description": "Metadata utility tools"
+      },
+      "metadatautil:upgradeapiversion": {
+        "description": "Updates metadata API version"
       }
     },
     "devPlugins": [

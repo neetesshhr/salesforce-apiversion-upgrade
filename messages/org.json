@@ -1,8 +1,0 @@
-{
-  "pluginTitle": "API Version upgrader",
-  "metadatatype": "name of metadata type",
-  "sourceapi": "source api version",
-  "targetapi": "target api version",
-  "path": "src folder location",
-  "prefix": "metadata prefix for e.g. PSM for PSM_New_Shipment.cls"
-}
