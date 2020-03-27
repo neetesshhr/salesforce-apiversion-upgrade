@@ -1,0 +1,9 @@
+{
+  "pluginTitle": "Deloitte API Version Upgrade Tool",
+  "metadatatype": "Select metadata type. Possible values: classes/triggers/pages/components/aura/lwc",
+  "sourceapi": "The API version threshold from which you wish to upgrade. Minimum: 10, Maximum: 46, Default: 46",
+  "targetapi": "The API version you want to upgrade to. Minimum: 30, Maximum: 47, Default: 47",
+  "path": "The path to your src folder",
+  "prefix": "Metadata filename prefix. E.g. PSM for PSM_New_Shipment.cls. Default: none(all files)",
+  "dryrun": "If present will only output the files changed without actually changing them"
+}
