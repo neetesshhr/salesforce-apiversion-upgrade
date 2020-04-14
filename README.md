@@ -1,7 +1,6 @@
-salesforce-apiversion-upgrade
+Easy to use tool for upgrading API versions salesforce meta xml files!
 =============================
-
-Helps in upgrading salesforce api version for all metadata files
+Helps in upgrading salesforce api version for selected metadata files. Specify a target api version and the plugin will take care of modifying all the meta xml files with the target api version!
 
 [![Version](https://img.shields.io/npm/v/salesforce-apiversion-upgrade.svg)](https://npmjs.org/package/salesforce-apiversion-upgrade)
 [![CircleCI](https://circleci.com/gh/https://github.com/ganesh2109/salesforce-apiversion-upgrade/salesforce-apiversion-upgrade/tree/master.svg?style=shield)](https://circleci.com/gh/https://github.com/ganesh2109/salesforce-apiversion-upgrade/salesforce-apiversion-upgrade/tree/master)
@@ -13,85 +12,37 @@ Helps in upgrading salesforce api version for all metadata files
 [![License](https://img.shields.io/npm/l/salesforce-apiversion-upgrade.svg)](https://github.com/https://github.com/ganesh2109/salesforce-apiversion-upgrade/salesforce-apiversion-upgrade/blob/master/package.json)
 
 <!-- toc -->
-* [Debugging your plugin](#debugging-your-plugin)
 <!-- tocstop -->
 <!-- install -->
 <!-- usage -->
+Since this is a SFDX plugin, it is a pre-requisite to have salesforce CLI installed globally first.
+Once that is in place, you can use the below to install this plugin!
+
 ```sh-session
-$ npm install -g salesforce-apiversion-upgrade
-$ sfdx COMMAND
-running command...
-$ sfdx (-v|--version|version)
-salesforce-apiversion-upgrade/0.0.1 win32-x64 node-v12.13.1
-$ sfdx --help [COMMAND]
-USAGE
-  $ sfdx COMMAND
-...
-```
-<!-- usagestop -->
-<!-- commands -->
-* [`sfdx metadatautil:upgradeapiversion [-m <string>] [-s <number>] [-t <number>] [-x <string>] [-p <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-metadatautilupgradeapiversion--m-string--s-number--t-number--x-string--p-string--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+Install the plugin
+$ sfdx plugins:install salesforce-apiversion-upgrade
 
-## `sfdx metadatautil:upgradeapiversion [-m <string>] [-s <number>] [-t <number>] [-x <string>] [-p <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+To check whether the plugin is installed
+$ sfdx metadatautil:upgradeapiversion
+
+To update the plugin to the latest version
+$ sfdx plugins:update
+```
 
 ```
-USAGE
-  $ sfdx metadatautil:upgradeapiversion [-m <string>] [-s <number>] [-t <number>] [-x <string>] [-p <string>] [-v 
-  <string>] [--apiversion <string>] [--json] [--loglevel 
-  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+USAGE:
+  $ sfdx metadatautil:upgradeapiversion -m <array> -p <string> [-s <number>] [-t <number>] [-x <string>] [-d] [--json] 
+  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
-OPTIONS
-  -m, --metadata=metadata                                                           name of metadata type
-  -p, --path=path                                                                   src folder location
-  -s, --sourceversion=sourceversion                                                 source api version
-  -t, --targetversion=targetversion                                                 target api version
-
-  -v, --targetdevhubusername=targetdevhubusername                                   username or alias for the dev hub
-                                                                                    org; overrides default dev hub org
-
-  -x, --fileprefix=fileprefix                                                       metadata prefix for e.g. PSM for
-                                                                                    PSM_New_Shipment.cls
-
-  --apiversion=apiversion                                                           override the api version used for
-                                                                                    api requests made by this command
-
-  --json                                                                            format output as json
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
-                                                                                    this command invocation
-
-EXAMPLES
-  $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
-     Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
-     My hub org id is: 00Dxx000000001234
+OPTIONS:
+  -d, --dryrun If present will only output the files changed without actually changing them
+  -m, --metadata (required) Select metadata type. Possible values:  classes/pages/components/triggers/aura/lwc
+  -p, --path (required) The path to your src folder
+  -s, --sourceversion The API version threshold from which you wish to upgrade. Minimum: 10, Maximum: 46, Default: 46
+  -t, --targetversion The API version you want to upgrade to. Minimum:30 Maximum:47 Default:47
+  -x, --fileprefix Metadata filename prefix. E.g. App for App_Utils.cls. Default: none(all files)
   
-  $ sfdx hello:org --name myname --targetusername myOrg@example.com
-     Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
+EXAMPLES:
+sfdx metadatautil:upgradeapiversion -m classes -s 40 -t 47 -p "C:\Users\SSSS\Project\src"
+sfdx metadatautil:upgradeapiversion -m classes/pages -s 40 -t 47 -p "C:\Users\SSSS\Project\src" -x "App"
 ```
-
-_See code: [lib\commands\metadatautil\upgradeapiversion.js](https://github.com/ganesh2109/salesforce-apiversion-upgrade/blob/v0.0.1/lib\commands\metadatautil\upgradeapiversion.js)_
-<!-- commandsstop -->
-<!-- debugging-your-plugin -->
-# Debugging your plugin
-We recommend using the Visual Studio Code (VS Code) IDE for your plugin development. Included in the `.vscode` directory of this plugin is a `launch.json` config file, which allows you to attach a debugger to the node process when running your commands.
-
-To debug the `hello:org` command: 
-1. Start the inspector
-  
-If you linked your plugin to the sfdx cli, call your command with the `dev-suspend` switch: 
-```sh-session
-$ sfdx hello:org -u myOrg@example.com --dev-suspend
-```
-  
-Alternatively, to call your command using the `bin/run` script, set the `NODE_OPTIONS` environment variable to `--inspect-brk` when starting the debugger:
-```sh-session
-$ NODE_OPTIONS=--inspect-brk bin/run hello:org -u myOrg@example.com
-```
-
-2. Set some breakpoints in your command code
-3. Click on the Debug icon in the Activity Bar on the side of VS Code to open up the Debug view.
-4. In the upper left hand corner of VS Code, verify that the "Attach to Remote" launch configuration has been chosen.
-5. Hit the green play button to the left of the "Attach to Remote" launch configuration window. The debugger should now be suspended on the first line of the program. 
-6. Hit the green play button at the top middle of VS Code (this play button will be to the right of the play button that you clicked in step #5).
-<br><img src=".images/vscodeScreenshot.png" width="480" height="278"><br>
-Congrats, you are debugging!
