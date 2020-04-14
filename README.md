@@ -12,9 +12,6 @@ Helps in upgrading salesforce api version for selected metadata files. Specify a
 [![License](https://img.shields.io/npm/l/salesforce-apiversion-upgrade.svg)](https://github.com/https://github.com/ganesh2109/salesforce-apiversion-upgrade/salesforce-apiversion-upgrade/blob/master/package.json)
 
 <!-- toc -->
-<!-- tocstop -->
-<!-- install -->
-<!-- usage -->
 Since this is a SFDX plugin, it is a pre-requisite to have salesforce CLI installed globally first.
 Once that is in place, you can use the below to install this plugin!
 
