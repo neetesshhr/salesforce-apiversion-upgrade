@@ -1,7 +1,7 @@
 {
   "name": "salesforce-apiversion-upgrade",
   "description": "Helps in upgrading salesforce api version for all metadata files",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "GanShankar",
   "bugs": "https://github.com/ganesh2109/salesforce-apiversion-upgrade/issues",
   "dependencies": {
