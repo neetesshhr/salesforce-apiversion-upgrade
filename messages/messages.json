@@ -1,5 +1,5 @@
 {
-  "pluginTitle": "Deloitte API Version Upgrade Tool",
+  "pluginTitle": "Salesforce API Version Upgrade Tool",
   "metadatatype": "Select metadata type. Possible values: classes/triggers/pages/components/aura/lwc",
   "sourceapi": "The API version threshold from which you wish to upgrade. Minimum: 10, Maximum: 46, Default: 46",
   "targetapi": "The API version you want to upgrade to. Minimum: 30, Maximum: 47, Default: 47",
