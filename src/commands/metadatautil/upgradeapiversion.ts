@@ -52,7 +52,7 @@ export default class UpgradeAPIVersion extends SfdxCommand {
       char: "t",
       description: messages.getMessage("targetapi"),
       min: 30,
-      max: 47
+      max: 48
     }),
     fileprefix: flags.string({
       char: "x",

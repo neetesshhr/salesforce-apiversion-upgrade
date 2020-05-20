@@ -38,10 +38,10 @@ OPTIONS:
   -m, --metadata (required) Select metadata type. Possible values:  classes/pages/components/triggers/aura/lwc
   -p, --path (required) The path to your src folder
   -s, --sourceversion The API version threshold from which you wish to upgrade. Minimum: 10, Maximum: 46, Default: 46
-  -t, --targetversion The API version you want to upgrade to. Minimum:30 Maximum:47 Default:47
+  -t, --targetversion The API version you want to upgrade to. Minimum:30 Maximum:48 Default:48
   -x, --fileprefix Metadata filename prefix. E.g. App for App_Utils.cls. Default: none(all files)
   
 EXAMPLES:
-sfdx metadatautil:upgradeapiversion -m classes -s 40 -t 47 -p "C:\Users\SSSS\Project\src"
-sfdx metadatautil:upgradeapiversion -m classes/pages -s 40 -t 47 -p "C:\Users\SSSS\Project\src" -x "App"
+sfdx metadatautil:upgradeapiversion -m classes -s 40 -t 48 -p "C:\Users\SSSS\Project\src"
+sfdx metadatautil:upgradeapiversion -m classes/pages -s 40 -t 48 -p "C:\Users\SSSS\Project\src" -x "App"
 ```

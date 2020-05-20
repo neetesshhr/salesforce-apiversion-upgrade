@@ -8,4 +8,4 @@ export const acceptedMetadata = [
 ];
 
 export const DEFAULT_SOURCE_API_VERSION = 46;
-export const DEFAULT_TARGET_API_VERSION = 47;
+export const DEFAULT_TARGET_API_VERSION = 48;
