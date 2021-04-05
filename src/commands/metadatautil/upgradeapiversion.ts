@@ -35,33 +35,33 @@ export default class UpgradeAPIVersion extends SfdxCommand {
         } else {
           return val;
         }
-      }
+      },
     }),
     path: flags.string({
       char: "p",
       description: messages.getMessage("path"),
-      required: true
+      required: true,
     }),
     sourceversion: flags.number({
       char: "s",
       description: messages.getMessage("sourceapi"),
       min: 10,
-      max: 46
+      max: 50,
     }),
     targetversion: flags.number({
       char: "t",
       description: messages.getMessage("targetapi"),
       min: 30,
-      max: 48
+      max: 51,
     }),
     fileprefix: flags.string({
       char: "x",
-      description: messages.getMessage("prefix")
+      description: messages.getMessage("prefix"),
     }),
     dryrun: flags.boolean({
       char: "d",
-      description: messages.getMessage("dryrun")
-    })
+      description: messages.getMessage("dryrun"),
+    }),
   };
 
   public async run(): Promise<void> {
@@ -79,7 +79,7 @@ export default class UpgradeAPIVersion extends SfdxCommand {
         : constants.DEFAULT_TARGET_API_VERSION,
       fileprefix: this.flags.fileprefix ? this.flags.fileprefix : "",
       path: this.flags.path,
-      dryrun: this.flags.dryrun ? this.flags.dryrun : false
+      dryrun: this.flags.dryrun ? this.flags.dryrun : false,
     };
 
     let service: ModifyMetaXMLFile = new ModifyMetaXMLFile();

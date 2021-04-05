@@ -10,7 +10,7 @@ export class ModifyMetaXMLFile {
       targetversion,
       fileprefix,
       path,
-      dryrun
+      dryrun,
     } = request;
 
     let fileName = `${fileprefix}*-meta.xml`;
@@ -42,15 +42,16 @@ export class ModifyMetaXMLFile {
     // Set the Regex to match the max requested API version
     let firstDigit = sourceversion.toString()[0];
     let secondDigit = sourceversion.toString()[1];
-    let regex = `<apiVersion>([0-${+firstDigit -
-      1}][0-9]|[${firstDigit}-${firstDigit}][0-${+secondDigit}]).0</apiVersion>`;
+    let regex = `<apiVersion>([0-${
+      +firstDigit - 1
+    }][0-9]|[${firstDigit}-${firstDigit}][0-${+secondDigit}]).0</apiVersion>`;
 
     // Constructing the options parameter to be passed to replace-in-file module
     let options = {
       files: selectedFiles,
       from: new RegExp(regex, "g"),
       to: `<apiVersion>${targetversion}.0</apiVersion>`,
-      dry: dryrun
+      dry: dryrun,
     };
 
     console.log(options);

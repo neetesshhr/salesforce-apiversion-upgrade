@@ -4,8 +4,8 @@ export const acceptedMetadata = [
   "components",
   "triggers",
   "aura",
-  "lwc"
+  "lwc",
 ];
 
-export const DEFAULT_SOURCE_API_VERSION = 46;
-export const DEFAULT_TARGET_API_VERSION = 48;
+export const DEFAULT_SOURCE_API_VERSION = 50;
+export const DEFAULT_TARGET_API_VERSION = 51;
