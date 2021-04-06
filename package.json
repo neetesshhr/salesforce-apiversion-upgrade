@@ -10,8 +10,8 @@
     "@oclif/errors": "^1",
     "@salesforce/command": "^3.0.0",
     "@salesforce/core": "^2.1.5",
-    "tslib": "^1",
-    "replace-in-file": "^5.0.2"
+    "replace-in-file": "^5.0.2",
+    "tslib": "^1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
